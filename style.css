@@ -1,0 +1,158 @@
+/* Загальні стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #e5e9f0; /* М'якший фон для всього тіла */
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFF5EE;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    overflow: hidden; /* Додано для коректного розміщення колонок */
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.category {
+    margin-bottom: 30px;
+    width: calc(33.33% - 20px);
+    float: left;
+    margin-right: 20px;
+    padding: 20px;
+    background-color:#FFE5B4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ecf0f1; /* Тонка межа для відділення */
+    transition: all 0.3s ease;
+}
+
+.category:nth-child(1) {
+    background-color: #560319; /* Світлий відтінок для першої колонки */
+}
+
+.category:nth-child(2) {
+    background-color: #f2f8ff; /* Світлий відтінок блакитного для другої колонки */
+}
+
+.category:nth-child(3) {
+    background-color: #f2f8ff; /* Світлий відтінок персикового для третьої колонки */
+}
+
+.category:nth-child(4) {
+    background-color: #f2f8ff; /* Світлий відтінок персикового для третьої колонки */
+}
+
+.category:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Підсвічування при наведенні */
+    border-color: #3498db; /* Зміна кольору межі при наведенні */
+}
+
+.category h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #ecf0f1;
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #f1f1f1;
+}
+
+input[type="checkbox"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+}
+
+label {
+    font-size: 18px;
+    color: #555;
+    flex-grow: 1;
+}
+
+label:hover {
+    color: #3498db;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* Стилі для іконок */
+li label::after {
+    content: '';
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+li input[type="checkbox"]:checked + label::after {
+    content: '✔';
+    color: #2ecc71;
+    font-size: 22px;
+}
+
+li input[type="checkbox"]:not(:checked) + label::after {
+    content: '❌';
+    color: #e74c3c;
+}
+
+/* Розміщення колонок на маленьких екранах */
+@media (max-width: 1024px) {
+    .category {
+        width: calc(50% - 20px);
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .category {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+}
